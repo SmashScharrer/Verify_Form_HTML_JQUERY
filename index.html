@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="fr">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Description" content="Author : G-P.N">
+        <!-- Début Link Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Fin Link Bootstrap -->
+        <!-- Début Link JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <!-- Fin Link JQUERY -->
+        <script>
+
+            var name = $("#dataName").val();
+            var country = $("#dataCountry").val();
+            var tva = $("#dataTVA").val();
+
+            $(document).ready(function () {
+
+                $("#dataSubmit").blur(function () {
+
+                    if((name == "") || (country == null) || (tva == null)){
+
+                        $("#dataSubmit").attr("disabled", true);
+
+                    }else{
+
+                        $("#dataSubmit").attr("disabled", false);
+
+                    }
+
+                });
+
+            });
+
+        </script>
+        <title>Form HTML & JQUERY</title>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <h1 class="text-center">Verify Form HTML & JQEURY</h1>
+
+            <br>
+
+            <form action="#" method="post">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+
+                            <label for="dataName">Name</label>
+                            <input type="text" class="form-control" id="dataName" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+
+                            <label for="dataCountry">Pays</label>
+                            <select class="form-control" name="dataCountry" id="dataCountry" required>
+                                <option value="" selected="selected" disabled="disabled">Sélectionner un pays</option>
+                                <option value="France">France</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+
+                            <label for="dataTVA">TVA</label>
+                            <input type="text" class="form-control" id="dataTVA" required>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12 text-center">
+
+                        <button type="submit" class="btn btn-primary" name="dataSubmit" id="dataSubmit" value="Envoyer" disabled>Envoyer</button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </body>
+
+</html>
